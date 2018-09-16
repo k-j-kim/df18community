@@ -1,0 +1,108 @@
+
+<aura:component 
+implements="forceCommunity:themeLayout" 
+extends="forceCommunity:navigationMenuBase" 
+access="global"
+description="MDL Theme Layout">
+
+<ltng:require styles="/resource/MDLResources/material-fonts.css" />
+<ltng:require styles="/resource/MDLResources/material.css" />
+
+<ltng:require scripts="/resource/MDLResources/material.js" afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+<aura:attribute type="String" name="headerColor" default="rgb(63,81,181)"></aura:attribute>
+<aura:attribute type="String" name="navColor" default="rgb(48,63,159)"></aura:attribute>
+
+<!-- COPIED FROM https://getmdl.io/templates/index.html -->
+
+<div>
+    <div class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary" style="{! 'background-color: ' + v.headerColor  + ' !important;' }">
+                <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+                </div>
+                <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+                    <h3>Material Design Community</h3>
+                </div>
+                <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+                </div>
+                <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark" style="{! 'background-color: ' + v.navColor  + ' !important;' }">
+
+                    <!-- START NAV MENU -->
+
+                    <aura:iteration items="{!v.menuItems}" var="item">
+                        <a href="javascript:void(0);" onclick="{!c.onNavClick}" data-menu-item-id="{!item.id}" class="mdl-layout__tab js-dynamic-menu-items">{!item.label}</a>
+                    </aura:iteration>
+
+                    <!-- END NAV MENU -->
+
+                    <a href="javascript:void(0);" data-menu-item-id="" class="mdl-layout--large-screen-only mdl-layout__tab">OVERVIEW</a>
+                    <a href="javascript:void(0);" data-menu-item-id="" class="mdl-layout--large-screen-only mdl-layout__tab">FEATURES</a>
+                    <a href="javascript:void(0);" data-menu-item-id="" class="mdl-layout--large-screen-only mdl-layout__tab">DETAILS</a>
+                    <a href="javascript:void(0);" data-menu-item-id="" class="mdl-layout--large-screen-only mdl-layout__tab">TECHNOLOGY</a>
+                    <a href="javascript:void(0);" data-menu-item-id="" class="mdl-layout--large-screen-only mdl-layout__tab">FAQ</a>
+                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent"
+                        id="add">
+                        <i class="material-icons" role="presentation">add</i>
+                        <span class="visuallyhidden">Add</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- START SAMPLE NUMBER INPUT FIELD -->
+
+            <form action="#" style="text-align: center;">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4"></input>
+                    <label class="mdl-textfield__label" for="sample4">Type Magic Number...</label>
+                    <span class="mdl-textfield__error">Input is not a magic number!</span>
+                </div>
+            </form>
+
+            <!-- START PAGE LAYOUT -->
+
+            <div class="mdl-layout__content">
+                {!v.body}
+            </div>
+
+            <!-- END PAGE LAYOUT -->
+
+            <div class="mdl-mega-footer">
+                <div class="mdl-mega-footer--middle-section">
+                    <div class="mdl-mega-footer--drop-down-section">
+                        <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked="true"></input>
+                        <h1 class="mdl-mega-footer--heading">Features</h1>
+                        <ul class="mdl-mega-footer--link-list">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Partners</a></li>
+                            <li><a href="#">Updates</a></li>
+                        </ul>
+                    </div>
+                    <div class="mdl-mega-footer--drop-down-section">
+                        <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked="true"></input>
+                        <h1 class="mdl-mega-footer--heading">Details</h1>
+                        <ul class="mdl-mega-footer--link-list">
+                            <li><a href="#">Spec</a></li>
+                            <li><a href="#">Tools</a></li>
+                            <li><a href="#">Resources</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mdl-mega-footer--bottom-section">
+                    <div class="mdl-logo">
+                        More Information
+                    </div>
+                    <ul class="mdl-mega-footer--link-list">
+                        <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Privacy and Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</aura:component>
