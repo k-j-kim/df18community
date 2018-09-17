@@ -1,3 +1,4 @@
 <design:component>
     <design:attribute name="headerColor" type="Color"></design:attribute>
+    <design:attribute name="communityName"></design:attribute>
 </design:component>

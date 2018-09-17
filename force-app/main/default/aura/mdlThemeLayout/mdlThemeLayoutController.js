@@ -1,18 +1,12 @@
 ({
-    onNavClick : function(component, event, helper) {
-        var id = event.target.dataset.menuItemId;
-        if (id) {
-            component.getSuper().navigate(id);
-        }
-    },
-
     afterScriptsLoaded : function (component, event, helper) {
+        // https://github.com/google/material-design-lite/wiki/How-the-Component-Handler-works
         componentHandler.upgradeDom();
     },
 
-    doInit: function(cmp) {
+    calculateNavColor: function(cmp) {
 
-        // snippet that lightens/darkens color (rgb/hex) from https://stackoverflow.com/a/13542669
+        // Lighten/Darken snippet from https://stackoverflow.com/a/13542669
         function shadeBlend(p,c0,c1) {
             var n=p<0?p*-1:p,u=Math.round,w=parseInt;
             if(c0.length>7){
@@ -25,6 +19,13 @@
         }
 
         // Derive the color for nav from header
-        cmp.set("v.navColor", shadeBlend(-0.30, cmp.get("v.headerColor")));
+        cmp.set("v._navColor", shadeBlend(-0.30, cmp.get("v.headerColor")));
+    },
+
+    onNavClick : function(component, event, helper) {
+        var id = event.target.dataset.menuItemId;
+        if (id) {
+            component.getSuper().navigate(id);
+        }
     }
 })
