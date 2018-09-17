@@ -12,7 +12,7 @@
 
     doInit: function(cmp) {
 
-        // Lighten/Darken snippet from https://stackoverflow.com/a/13542669
+        // snippet that lightens/darkens color (rgb/hex) from https://stackoverflow.com/a/13542669
         function shadeBlend(p,c0,c1) {
             var n=p<0?p*-1:p,u=Math.round,w=parseInt;
             if(c0.length>7){
