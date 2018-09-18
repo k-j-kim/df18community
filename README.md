@@ -4,7 +4,8 @@ Simple example of creating a Salesforce Community theme layout with [Material De
 
 ## Prerequisite
 - [SFDX](https://developer.salesforce.com/tools/sfdxcli)
-- [Dev Hub](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_devhub.htm)
+- [Org with Dev Hub enabled](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_enable_devhub.htm)
+- (Optional) [VS Code](https://code.visualstudio.com/)
 - (Optional) [Salesforce Extensions for VS Code](https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode)
 
 ## Dev, Build and Test
