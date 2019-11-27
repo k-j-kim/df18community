@@ -1,4 +1,4 @@
-# DF18 demo for Communities Theming
+# DF18 demo for Communities Theming!
 
 Simple example of creating a Salesforce Community theme layout with [Material Design Lite](https://getmdl.io/started/index.html)
 
